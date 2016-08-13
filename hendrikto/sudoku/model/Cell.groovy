@@ -4,7 +4,7 @@ package hendrikto.sudoku.model
  * @author Hendrik Werner
  */
 class Cell {
-    int value = 0
+    int value
     private final Row row
     private final Column column
     private final Block block
