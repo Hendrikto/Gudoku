@@ -4,7 +4,7 @@ package hendrikto.sudoku.model
  * @author Hendrik Werner
  */
 class Column {
-    private Cell[] cells = new Cell[9]
+    private final Cell[] cells = new Cell[9]
 
     public Column(Cell... cs) {
         for (i in 0..<9) {
