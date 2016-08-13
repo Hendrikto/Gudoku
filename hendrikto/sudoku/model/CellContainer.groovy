@@ -16,14 +16,14 @@ abstract class CellContainer {
     }
 
     void addCandidate(int c) {
-        candidates.add(c)
+        candidates.add c
     }
 
     void removeCandidate(int c) {
-        candidates.remove(c)
+        candidates.remove c
     }
 
     boolean isCandidate(int c) {
-        candidates.contains(c)
+        candidates.contains c
     }
 }
