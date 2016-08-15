@@ -4,10 +4,10 @@ package hendrikto.sudoku.model
  * @author Hendrik Werner
  */
 class Cell {
+    final Row row
+    final Column column
+    final Block block
     int value
-    private final Row row
-    private final Column column
-    private final Block block
 
     Cell(Row r, Column c, Block b) {
         row = r
