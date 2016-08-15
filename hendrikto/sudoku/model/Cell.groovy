@@ -15,6 +15,14 @@ class Cell {
         block = b
     }
 
+    void setValue(int newValue) {
+        clear()
+        value = newValue
+        row.removeCandidate value
+        column.removeCandidate value
+        block.removeCandidate value
+    }
+
     void clear() {
         if (value) {
             row.addCandidate value
