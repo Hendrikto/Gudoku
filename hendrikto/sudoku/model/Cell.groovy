@@ -9,10 +9,10 @@ class Cell {
     final Block block
     int value
 
-    Cell(Row r, Column c, Block b) {
-        row = r
-        column = c
-        block = b
+    Cell(Row row, Column column, Block block) {
+        this.row = row
+        this.column = column
+        this.block = block
     }
 
     void setValue(int newValue) {
