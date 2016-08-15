@@ -15,6 +15,15 @@ class Cell {
         block = b
     }
 
+    void clear() {
+        if (value) {
+            row.addCandidate value
+            column.addCandidate value
+            block.addCandidate value
+            value = 0
+        }
+    }
+
     @Override
     String toString() {
         value
