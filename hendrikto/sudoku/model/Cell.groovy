@@ -14,4 +14,9 @@ class Cell {
         column = c
         block = b
     }
+
+    @Override
+    String toString() {
+        value
+    }
 }
