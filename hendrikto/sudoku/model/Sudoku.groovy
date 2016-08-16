@@ -33,4 +33,16 @@ class Sudoku {
             }
         }
     }
+
+    @Override
+    String toString() {
+        StringBuilder sb = new StringBuilder()
+        cells.eachWithIndex { Cell cell, int i ->
+            sb.append cell
+            if ((i + 1) % 9 == 0) {
+                sb.append "\n"
+            }
+        }
+        sb
+    }
 }
