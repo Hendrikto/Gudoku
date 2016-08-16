@@ -16,6 +16,7 @@ class Cell {
     }
 
     void setValue(int newValue) {
+        assert newValue in 1..9
         clear()
         value = newValue
         row.removeCandidate value
