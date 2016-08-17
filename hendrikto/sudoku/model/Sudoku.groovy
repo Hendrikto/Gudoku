@@ -34,6 +34,17 @@ class Sudoku {
         }
     }
 
+    Sudoku(String seed) {
+        this()
+        cells.eachWithIndex { Cell cell, int i ->
+            try {
+                cell.setValue Integer.parseInt(seed[i])
+            } catch (all) {
+                // value is left at 0
+            }
+        }
+    }
+
     @Override
     String toString() {
         StringBuilder sb = new StringBuilder()
