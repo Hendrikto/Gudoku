@@ -49,9 +49,9 @@ class Sudoku {
     String toString() {
         StringBuilder sb = new StringBuilder()
         cells.eachWithIndex { Cell cell, int i ->
-            sb.append cell
+            sb.append "$cell "
             if ((i + 1) % 9 == 0) {
-                sb.append "\n"
+                sb.setCharAt sb.length() - 1, "\n" as char
             }
         }
         sb
