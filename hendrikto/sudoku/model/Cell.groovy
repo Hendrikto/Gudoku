@@ -33,6 +33,16 @@ class Cell {
         }
     }
 
+    Set<Integer> getCandidates() {
+        Set<Integer> candidates = []
+        for (i in 1..9) {
+            if (isAllowed(i)) {
+                candidates << i
+            }
+        }
+        candidates
+    }
+
     @Override
     String toString() {
         value
