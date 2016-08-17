@@ -4,7 +4,7 @@ package hendrikto.sudoku.model
  * @author Hendrik Werner
  */
 abstract class Area {
-    protected final Set<Integer> candidates = new HashSet<>(1..9)
+    protected final Set<Integer> candidates = 1..9
 
     void addCandidate(int c) {
         candidates.add c
