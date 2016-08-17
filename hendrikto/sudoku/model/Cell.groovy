@@ -43,6 +43,10 @@ class Cell {
         candidates
     }
 
+    boolean isEmpty() {
+        value == 0
+    }
+
     @Override
     String toString() {
         value
