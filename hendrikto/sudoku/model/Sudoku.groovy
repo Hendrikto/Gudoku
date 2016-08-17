@@ -28,7 +28,7 @@ class Sudoku {
                 cells[i++] = new Cell(
                         rows[y],
                         columns[x],
-                        blocks[x / 3 as int][y / 3 as int]
+                        blocks[x.intdiv(3) as int][y.intdiv(3) as int]
                 )
             }
         }
