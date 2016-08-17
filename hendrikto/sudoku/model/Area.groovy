@@ -10,7 +10,7 @@ abstract class Area {
     protected final Set<Integer> candidates = 1..9 as Set
 
     void addCandidate(int c) {
-        candidates.add c
+        candidates << c
     }
 
     void removeCandidate(int c) {
