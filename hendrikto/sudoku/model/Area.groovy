@@ -18,6 +18,6 @@ abstract class Area {
     }
 
     boolean isCandidate(int c) {
-        candidates.contains c
+        c in candidates
     }
 }
