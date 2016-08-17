@@ -37,4 +37,8 @@ class Cell {
     String toString() {
         value
     }
+
+    private boolean isAllowed(int candidate) {
+        candidate in row.candidates && candidate in column.candidates && candidate in block.candidates
+    }
 }
