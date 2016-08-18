@@ -38,7 +38,7 @@ class Sudoku {
         this()
         cells.eachWithIndex { Cell cell, int i ->
             try {
-                cell.setValue Integer.parseInt(seed[i])
+                cell.setValue seed[i] as Integer
             } catch (all) {
                 // value is left at 0
             }
