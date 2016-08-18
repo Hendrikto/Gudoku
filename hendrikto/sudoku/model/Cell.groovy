@@ -1,8 +1,11 @@
 package hendrikto.sudoku.model
 
+import groovy.transform.TypeChecked
+
 /**
  * @author Hendrik Werner
  */
+@TypeChecked
 class Cell {
     final Row row
     final Column column
