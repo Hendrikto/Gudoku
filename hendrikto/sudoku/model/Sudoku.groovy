@@ -37,10 +37,8 @@ class Sudoku {
     Sudoku(String seed) {
         this()
         cells.eachWithIndex { Cell cell, int i ->
-            try {
+            if (seed[i].isInteger()) {
                 cell.setValue seed[i] as Integer
-            } catch (all) {
-                // value is left at 0
             }
         }
     }
