@@ -7,7 +7,7 @@ import groovy.transform.TypeChecked
  */
 @TypeChecked
 class Sudoku {
-    private final Cell[] cells = new Cell[81]
+    final Cell[] cells = new Cell[81]
 
     Sudoku() {
         Row[] rows = new Row[9]
@@ -39,19 +39,6 @@ class Sudoku {
         cells.eachWithIndex { Cell cell, int i ->
             if (seed[i].isInteger()) {
                 cell.setValue seed[i] as Integer
-            }
-        }
-    }
-
-    void solve() {
-        boolean progress = true
-        while (progress) {
-            progress = false
-            for (cell in cells) {
-                if (cell.isEmpty() && cell.candidates.size() == 1) {
-                    cell.setValue cell.candidates.head()
-                    progress = true
-                }
             }
         }
     }
