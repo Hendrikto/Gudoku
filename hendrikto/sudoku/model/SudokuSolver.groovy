@@ -10,6 +10,11 @@ class SudokuSolver {
     Sudoku sudoku
 
     void solve() {
+        pickSingleCandidates()
+        backtrack()
+    }
+
+    private void pickSingleCandidates() {
         boolean progress = true
         while (progress) {
             progress = false
@@ -20,7 +25,6 @@ class SudokuSolver {
                 }
             }
         }
-        backtrack()
     }
 
     private boolean backtrack() {
