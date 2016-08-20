@@ -20,6 +20,7 @@ class SudokuSolver {
                 }
             }
         }
+        backtrack()
     }
 
     private boolean backtrack() {
