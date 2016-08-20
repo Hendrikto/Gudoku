@@ -49,7 +49,7 @@ class Sudoku {
         cells.eachWithIndex { Cell cell, int i ->
             sb.with {
                 append cell
-                append((i + 1) % 9 == 0 ? "\n" : " ")
+                append(++i % 9 == 0 ? "\n" : " ")
             }
         }
         sb
