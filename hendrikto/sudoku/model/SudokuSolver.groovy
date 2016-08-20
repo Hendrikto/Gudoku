@@ -21,4 +21,19 @@ class SudokuSolver {
             }
         }
     }
+
+    private boolean backtrack() {
+        if (sudoku.cells.count { it.isEmpty() } == 0) {
+            return true
+        }
+        Cell cell = sudoku.cells.find { it.isEmpty() }
+        for (candidate in cell.candidates) {
+            cell.setValue candidate
+            if (backtrack()) {
+                return true
+            }
+        }
+        cell.clear()
+        return false
+    }
 }
