@@ -47,7 +47,10 @@ class Sudoku {
     String toString() {
         StringBuilder sb = new StringBuilder()
         cells.eachWithIndex { Cell cell, int i ->
-            sb.append cell append((i + 1) % 9 == 0 ? "\n" : " ")
+            sb.with {
+                append cell
+                append((i + 1) % 9 == 0 ? "\n" : " ")
+            }
         }
         sb
     }
