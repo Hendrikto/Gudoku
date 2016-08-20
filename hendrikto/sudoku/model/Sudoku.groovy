@@ -36,9 +36,9 @@ class Sudoku {
 
     Sudoku(String seed) {
         this()
-        cells.eachWithIndex { Cell cell, int i ->
+        for (int i = 0; i < 81 && i < seed.length(); i++) {
             if (seed[i].isInteger()) {
-                cell.setValue seed[i] as Integer
+                cells[i].setValue seed[i] as Integer
             }
         }
     }
