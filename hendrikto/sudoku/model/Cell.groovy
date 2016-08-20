@@ -1,6 +1,8 @@
 package hendrikto.sudoku.model
 
 import groovy.transform.TypeChecked
+import groovy.transform.stc.ClosureParams
+import groovy.transform.stc.SimpleType
 
 /**
  * @author Hendrik Werner
@@ -22,16 +24,12 @@ class Cell {
         assert newValue in 1..9
         clear()
         value = newValue
-        row.removeCandidate value
-        column.removeCandidate value
-        block.removeCandidate value
+        forAllAreas { it.removeCandidate value }
     }
 
     void clear() {
         if (value) {
-            row.addCandidate value
-            column.addCandidate value
-            block.addCandidate value
+            forAllAreas { it.addCandidate value }
             value = 0
         }
     }
@@ -57,5 +55,13 @@ class Cell {
 
     private boolean isAllowed(int candidate) {
         candidate in row.candidates && candidate in column.candidates && candidate in block.candidates
+    }
+
+    private void forAllAreas(
+            @ClosureParams(value = SimpleType, options = "hendrikto.sudoku.model.Area") Closure closure
+    ) {
+        closure row
+        closure column
+        closure block
     }
 }
