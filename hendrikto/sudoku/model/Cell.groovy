@@ -9,12 +9,14 @@ import groovy.transform.stc.SimpleType
  */
 @TypeChecked
 class Cell {
+    final Sudoku sudoku
     final Row row
     final Column column
     final Block block
     int value
 
-    Cell(Row row, Column column, Block block) {
+    Cell(Sudoku sudoku, Row row, Column column, Block block) {
+        this.sudoku = sudoku
         this.row = row
         this.column = column
         this.block = block
@@ -25,12 +27,14 @@ class Cell {
         clear()
         value = newValue
         forAllAreas { it.removeCandidate value }
+        sudoku.emptyCells--
     }
 
     void clear() {
         if (value) {
             forAllAreas { it.addCandidate value }
             value = 0
+            sudoku.emptyCells++
         }
     }
 

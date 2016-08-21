@@ -8,6 +8,7 @@ import groovy.transform.TypeChecked
 @TypeChecked
 class Sudoku {
     final Cell[] cells = new Cell[81]
+    int emptyCells = 81
 
     Sudoku() {
         Row[] rows = new Row[9]
@@ -26,6 +27,7 @@ class Sudoku {
         for (x in 0..<9) {
             for (y in 0..<9) {
                 cells[i++] = new Cell(
+                        this,
                         rows[y],
                         columns[x],
                         blocks[x.intdiv(3) as int][y.intdiv(3) as int]

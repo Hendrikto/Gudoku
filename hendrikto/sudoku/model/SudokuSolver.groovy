@@ -28,7 +28,7 @@ class SudokuSolver {
     }
 
     private boolean backtrack() {
-        if (sudoku.cells.count { it.empty } == 0) {
+        if (sudoku.emptyCells == 0) {
             return true
         }
         Cell cell = sudoku.cells.find { it.empty }
