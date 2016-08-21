@@ -50,7 +50,7 @@ class Cell {
 
     @Override
     String toString() {
-        value
+        value ?: "."
     }
 
     private boolean isAllowed(int candidate) {
