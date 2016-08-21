@@ -45,7 +45,7 @@ class Cell {
     }
 
     boolean isEmpty() {
-        value == 0
+        !value
     }
 
     @Override
