@@ -19,7 +19,7 @@ class SudokuSolver {
         while (progress) {
             progress = false
             for (cell in sudoku.cells) {
-                if (cell.isEmpty() && cell.candidates.size() == 1) {
+                if (cell.empty && cell.candidates.size() == 1) {
                     cell.setValue cell.candidates.head()
                     progress = true
                 }
@@ -28,10 +28,10 @@ class SudokuSolver {
     }
 
     private boolean backtrack() {
-        if (sudoku.cells.count { it.isEmpty() } == 0) {
+        if (sudoku.cells.count { it.empty } == 0) {
             return true
         }
-        Cell cell = sudoku.cells.find { it.isEmpty() }
+        Cell cell = sudoku.cells.find { it.empty }
         for (candidate in cell.candidates) {
             cell.setValue candidate
             if (backtrack()) {
