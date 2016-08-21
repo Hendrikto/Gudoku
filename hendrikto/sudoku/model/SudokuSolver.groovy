@@ -39,6 +39,6 @@ class SudokuSolver {
             }
         }
         cell.clear()
-        return false
+        false
     }
 }
