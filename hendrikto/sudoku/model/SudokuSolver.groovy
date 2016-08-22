@@ -30,10 +30,10 @@ class SudokuSolver {
     }
 
     private boolean backtrack() {
-        if (sudoku.emptyCells == 0) {
+        if (sudoku.empty.size() == 0) {
             return true
         }
-        Cell cell = sudoku.cells.find { it.empty }
+        Cell cell = sudoku.empty.head()
         for (candidate in cell.candidates) {
             cell.setValue candidate
             Set<Cell> changed = pickSingleCandidates()

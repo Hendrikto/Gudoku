@@ -8,7 +8,7 @@ import groovy.transform.TypeChecked
 @TypeChecked
 class Sudoku {
     final Cell[] cells = new Cell[81]
-    int emptyCells = 81
+    final List<Cell> empty = []
 
     Sudoku() {
         Row[] rows = new Row[9]

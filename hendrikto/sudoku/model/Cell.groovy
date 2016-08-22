@@ -20,6 +20,7 @@ class Cell {
         this.row = row
         this.column = column
         this.block = block
+        sudoku.empty << this
     }
 
     void setValue(int newValue) {
@@ -27,14 +28,14 @@ class Cell {
         clear()
         value = newValue
         forAllAreas { it.removeCandidate value }
-        sudoku.emptyCells--
+        sudoku.empty.remove this
     }
 
     void clear() {
         if (value) {
             forAllAreas { it.addCandidate value }
             value = 0
-            sudoku.emptyCells++
+            sudoku.empty << this
         }
     }
 
