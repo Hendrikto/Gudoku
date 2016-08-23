@@ -8,7 +8,7 @@ import groovy.transform.stc.SimpleType
  * @author Hendrik Werner
  */
 @TypeChecked
-class Cell {
+class Cell implements Comparable<Cell> {
     final Sudoku sudoku
     final Row row
     final Column column
@@ -56,6 +56,11 @@ class Cell {
     @Override
     String toString() {
         value ?: "."
+    }
+
+    @Override
+    int compareTo(Cell other) {
+         candidates.size() - other.candidates.size()
     }
 
     private boolean isAllowed(int candidate) {
