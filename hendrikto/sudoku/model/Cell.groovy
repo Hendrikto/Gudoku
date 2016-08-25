@@ -49,10 +49,6 @@ class Cell implements Comparable<Cell> {
         candidates
     }
 
-    boolean isEmpty() {
-        !value
-    }
-
     @Override
     String toString() {
         value ?: "."

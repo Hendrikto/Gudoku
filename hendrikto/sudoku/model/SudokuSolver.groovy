@@ -19,7 +19,7 @@ class SudokuSolver {
         while (progress) {
             progress = false
             for (cell in sudoku.cells) {
-                if (cell.empty && cell.candidates.size() == 1) {
+                if (!cell.value && cell.candidates.size() == 1) {
                     cell.setValue cell.candidates.head()
                     changed << cell
                     progress = true
