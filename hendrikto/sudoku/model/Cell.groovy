@@ -10,12 +10,12 @@ import groovy.transform.stc.SimpleType
 @TypeChecked
 class Cell implements Comparable<Cell> {
     final Sudoku sudoku
-    final Row row
-    final Column column
-    final Block block
+    final Set<Integer> row
+    final Set<Integer> column
+    final Set<Integer> block
     int value
 
-    Cell(Sudoku sudoku, Row row, Column column, Block block) {
+    Cell(Sudoku sudoku, Set<Integer> row, Set<Integer> column, Set<Integer> block) {
         this.sudoku = sudoku
         this.row = row
         this.column = column
@@ -27,13 +27,13 @@ class Cell implements Comparable<Cell> {
         assert newValue in 1..9
         clear()
         value = newValue
-        forAllAreas { it.removeCandidate value }
+        forAllAreas { it.remove value }
         sudoku.empty.remove this
     }
 
     void clear() {
         if (value) {
-            forAllAreas { it.addCandidate value }
+            forAllAreas { it << value }
             value = 0
             sudoku.empty << this
         }
@@ -60,11 +60,11 @@ class Cell implements Comparable<Cell> {
     }
 
     private boolean isAllowed(int candidate) {
-        candidate in row.candidates && candidate in column.candidates && candidate in block.candidates
+        candidate in row && candidate in column && candidate in block
     }
 
     private void forAllAreas(
-            @ClosureParams(value = SimpleType, options = "hendrikto.sudoku.model.Area") Closure closure
+            @ClosureParams(value = SimpleType, options = "java.util.Set") Closure closure
     ) {
         closure row
         closure column

@@ -11,16 +11,16 @@ class Sudoku {
     final List<Cell> empty = []
 
     Sudoku() {
-        Row[] rows = new Row[9]
-        Column[] columns = new Column[9]
-        Block[][] blocks = new Block[3][3]
+        Set<Integer>[] rows = new Set<Integer>[9]
+        Set<Integer>[] columns = new Set<Integer>[9]
+        Set<Integer>[][] blocks = new Set<Integer>[3][3]
         for (int i in 0..<9) {
-            rows[i] = new Row()
-            columns[i] = new Column()
+            rows[i] = 1..9 as Set
+            columns[i] = 1..9 as Set
         }
         for (int x in 0..<3) {
             for (int y in 0..<3) {
-                blocks[x][y] = new Block()
+                blocks[x][y] = 1..9 as Set
             }
         }
         int i = 0;
