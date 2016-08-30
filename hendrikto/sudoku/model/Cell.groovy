@@ -40,13 +40,7 @@ class Cell implements Comparable<Cell> {
     }
 
     Set<Integer> getCandidates() {
-        Set<Integer> candidates = []
-        for (i in 1..9) {
-            if (isAllowed(i)) {
-                candidates << i
-            }
-        }
-        candidates
+        row.intersect column intersect block
     }
 
     @Override
@@ -57,10 +51,6 @@ class Cell implements Comparable<Cell> {
     @Override
     int compareTo(Cell other) {
          candidates.size() - other.candidates.size()
-    }
-
-    private boolean isAllowed(int candidate) {
-        candidate in row && candidate in column && candidate in block
     }
 
     private void forAllAreas(
