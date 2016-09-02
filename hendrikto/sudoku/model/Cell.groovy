@@ -9,6 +9,8 @@ import groovy.transform.stc.SimpleType
  */
 @TypeChecked
 class Cell implements Comparable<Cell> {
+    static final ALLOWED_VALUES = 1..9
+
     final Sudoku sudoku
     final Area row
     final Area column
@@ -24,7 +26,7 @@ class Cell implements Comparable<Cell> {
     }
 
     void setValue(int newValue) {
-        assert newValue in 1..9
+        assert newValue in ALLOWED_VALUES
         clear()
         value = newValue
         forAllAreas { it.remove value }
