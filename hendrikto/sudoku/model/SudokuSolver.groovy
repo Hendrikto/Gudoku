@@ -18,7 +18,7 @@ class SudokuSolver {
         boolean progress = true
         while (progress) {
             progress = false
-            for (cell in sudoku.cells) {
+            for (Cell cell in sudoku.cells) {
                 if (!cell.value && cell.candidates.size() == 1) {
                     cell.setValue cell.candidates.head()
                     changed << cell
@@ -34,7 +34,7 @@ class SudokuSolver {
             return true
         }
         Cell cell = sudoku.empty.head()
-        for (candidate in cell.candidates) {
+        for (int candidate in cell.candidates) {
             cell.setValue candidate
             Set<Cell> changed = pickSingleCandidates()
             if (backtrack()) {
