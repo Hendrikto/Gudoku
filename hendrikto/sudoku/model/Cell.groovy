@@ -37,7 +37,7 @@ class Cell {
         if (value) {
             forAllAreas { it << value }
             value = 0
-            sudoku.empty << this
+            sudoku.empty.add 0, this
         }
     }
 
