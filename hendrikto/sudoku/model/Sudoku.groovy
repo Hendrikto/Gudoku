@@ -10,7 +10,7 @@ class Sudoku {
     final Cell[] cells = new Cell[81]
     final List<Cell> empty = []
 
-    SudokuStringifier stringifier = new PrettyStringifier()
+    SudokuStringifier stringifier = new SimpleStringifier()
 
     Sudoku() {
         Area[] rows = new Area[9]
