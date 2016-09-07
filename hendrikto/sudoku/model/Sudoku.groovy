@@ -10,6 +10,8 @@ class Sudoku {
     final Cell[] cells = new Cell[81]
     final List<Cell> empty = []
 
+    SudokuStringifier stringifier = new PrettyStringifier()
+
     Sudoku() {
         Area[] rows = new Area[9]
         Area[] columns = new Area[9]
@@ -47,13 +49,6 @@ class Sudoku {
 
     @Override
     String toString() {
-        StringBuilder sb = new StringBuilder()
-        cells.eachWithIndex { Cell cell, int i ->
-            sb.with {
-                append cell
-                append(++i % 9 == 0 ? "\n" : " ")
-            }
-        }
-        sb
+        stringifier.stringify this
     }
 }
