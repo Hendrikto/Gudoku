@@ -5,7 +5,7 @@ package hendrikto.sudoku.model
  */
 class PrettyStringifier implements SudokuStringifier {
     @Override
-    String stringify(Sudoku sudoku) {
+    String stringify(final Sudoku sudoku) {
         StringBuilder sb = new StringBuilder()
         sudoku.cells.eachWithIndex { Cell cell, int i ->
             int cellID = ++i

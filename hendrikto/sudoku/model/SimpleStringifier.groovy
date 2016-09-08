@@ -5,7 +5,7 @@ package hendrikto.sudoku.model
  */
 class SimpleStringifier implements SudokuStringifier {
     @Override
-    String stringify(Sudoku sudoku) {
+    String stringify(final Sudoku sudoku) {
         sudoku.cells.join("")
     }
 }

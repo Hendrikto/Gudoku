@@ -38,7 +38,7 @@ class Sudoku {
         }
     }
 
-    Sudoku(String seed) {
+    Sudoku(final String seed) {
         this()
         for (int i = 0; i < 81 && i < seed?.length(); i++) {
             if (seed[i].isInteger()) {

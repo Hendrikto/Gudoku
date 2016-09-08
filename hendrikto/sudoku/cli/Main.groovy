@@ -8,7 +8,7 @@ import hendrikto.sudoku.model.SudokuSolver
  * @author Hendrik Werner
  */
 class Main {
-    static void main(String[] args) {
+    static void main(final String[] args) {
         ArgsParser parser = new ArgsParser()
         OptionAccessor options = parser.parse args
         if (options.arguments().empty || options.help) {

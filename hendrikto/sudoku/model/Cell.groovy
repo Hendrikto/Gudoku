@@ -17,7 +17,7 @@ class Cell {
     final Area block
     int value
 
-    Cell(Sudoku sudoku, Area row, Area column, Area block) {
+    Cell(final Sudoku sudoku, final Area row, final Area column, final Area block) {
         this.sudoku = sudoku
         this.row = row
         this.column = column
@@ -25,7 +25,7 @@ class Cell {
         sudoku.empty << this
     }
 
-    void setValue(int newValue) {
+    void setValue(final int newValue) {
         assert newValue in ALLOWED_VALUES
         clear()
         value = newValue
@@ -51,7 +51,7 @@ class Cell {
     }
 
     private void forAllAreas(
-            @ClosureParams(value = SimpleType, options = "hendrikto.sudoku.model.Area") Closure closure
+            @ClosureParams(value = SimpleType, options = "hendrikto.sudoku.model.Area") final Closure closure
     ) {
         closure row
         closure column
