@@ -40,7 +40,7 @@ class Sudoku {
 
     Sudoku(String seed) {
         this()
-        for (int i = 0; i < 81 && i < seed.length(); i++) {
+        for (int i = 0; i < 81 && i < seed?.length(); i++) {
             if (seed[i].isInteger()) {
                 cells[i].setValue seed[i] as Integer
             }
