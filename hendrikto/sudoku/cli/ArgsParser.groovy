@@ -7,7 +7,7 @@ class ArgsParser {
 
     ArgsParser() {
         builder.with {
-            usage = "gudoku [options] [Sudoku]"
+            usage = "gudoku [options] <Sudoku>"
             h longOpt: "help", "Print this message."
             p longOpt: "pretty-print", "Print output in a human readable form."
         }
