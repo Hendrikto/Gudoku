@@ -22,7 +22,7 @@ class Main {
                 println "Read Sudoku:\n\n$sudoku\n\nSolving...\n\n"
             }
             new SudokuSolver(sudoku: sudoku).solve()
-            print sudoku
+            println sudoku
         } catch (IllegalArgumentException ex) {
             println "Error: $ex.message"
         }
