@@ -26,13 +26,11 @@ class Cell {
     }
 
     void setValue(final int newValue) {
-        if (newValue) {
-            assert newValue in ALLOWED_VALUES
-            clear()
-            value = newValue
-            forAllAreas { it.remove value }
-            sudoku.empty.remove this
-        }
+        assert newValue in ALLOWED_VALUES
+        clear()
+        value = newValue
+        forAllAreas { it.remove value }
+        sudoku.empty.remove this
     }
 
     void clear() {
