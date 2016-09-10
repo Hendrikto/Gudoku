@@ -21,12 +21,9 @@ representing empty cells as "." but you can use any character you want. You can
 even mix and match different characters.
 
 Gudoku will reject Sudokus containing collisions with an error message stating
-where the first collision occurred.
+where the first collision occurred:
 
-    gudoku 11
-
-will result in
-
+    $ gudoku 11
     Error: Specified seed contains a collision at position 2.
 
 #### Examples
