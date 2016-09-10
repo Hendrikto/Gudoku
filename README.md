@@ -45,6 +45,44 @@ Notice:
 
 ### Options
 
+#### --empty `<char>`
+    $ gudoku --pretty-print --empty - .
+    Read Sudoku:
+    
+    - - - | - - - | - - -
+    - - - | - - - | - - -
+    - - - | - - - | - - -
+    ------+-------+------
+    - - - | - - - | - - -
+    - - - | - - - | - - -
+    - - - | - - - | - - -
+    ------+-------+------
+    - - - | - - - | - - -
+    - - - | - - - | - - -
+    - - - | - - - | - - -
+    
+    
+    Solving...
+    
+    
+    1 2 3 | 4 5 6 | 7 8 9
+    4 5 6 | 7 8 9 | 1 2 3
+    7 8 9 | 1 2 3 | 4 5 6
+    ------+-------+------
+    2 1 4 | 3 6 5 | 8 9 7
+    3 6 5 | 8 9 7 | 2 1 4
+    8 9 7 | 2 1 4 | 3 6 5
+    ------+-------+------
+    5 3 1 | 6 4 2 | 9 7 8
+    6 4 2 | 9 7 8 | 5 3 1
+    9 7 8 | 5 3 1 | 6 4 2
+
+Set the character that represents an empty cell in the output. This option only
+makes sense in conjunction with `-p, --pretty-print` as the output does not
+contain empty cells otherwise.
+Notice:
+* if you provide a string only the first character is used
+
 #### -h, --help
     gudoku -h
     gudoku --help
