@@ -1,5 +1,5 @@
 # Gudoku
-A Sudoku solver in written in Groovy.
+A Sudoku solver written in Groovy.
 
 ## About
 This solver employs a pretty naive solving algorithm but should be able to solve
