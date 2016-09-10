@@ -31,7 +31,7 @@ even mix and match different characters.
     
 The last 5 examples all represent the same Sudoku while the first 2 are empty.
 Notice:
-* you need to use `""` or `.` to represent an empty Sudoku
+* you need to use `""` or at least one character to represent an empty Sudoku
 * you can leave out empty cells at the end of the Sudoku
 
 ### Options
@@ -45,3 +45,8 @@ Print a help message explaining how to use Gudoku.
     gudoku -p ""
     gudoku --pretty-print ""
 Print the output in a human readable form.
+
+### File Expansion
+This program supports argument file expansion via `@`:
+
+    gudoku @options.txt @sudoku.txt
