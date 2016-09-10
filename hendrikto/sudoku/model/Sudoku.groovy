@@ -45,7 +45,7 @@ class Sudoku {
                 int value = seed[i] as int
                 if (value) {
                     if (value in cells[i].candidates) {
-                        cells[i].setValue value
+                        cells[i].value = value
                     } else {
                         throw new IllegalArgumentException("Specified seed contains a collision at position ${i + 1}.")
                     }
