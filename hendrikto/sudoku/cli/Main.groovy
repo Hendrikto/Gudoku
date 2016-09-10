@@ -1,5 +1,6 @@
 package hendrikto.sudoku.cli
 
+import hendrikto.sudoku.model.Cell
 import hendrikto.sudoku.model.PrettyStringifier
 import hendrikto.sudoku.model.Sudoku
 import hendrikto.sudoku.model.SudokuSolver
@@ -14,6 +15,9 @@ class Main {
         if (options.arguments().empty || options.help) {
             parser.usage()
             return
+        }
+        if (options.empty) {
+            Cell.empty = options.empty as char
         }
         try {
             Sudoku sudoku = new Sudoku(options.arguments().head())
