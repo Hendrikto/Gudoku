@@ -20,6 +20,15 @@ Anything other than 1..9 is interpreted as empty. Gudoku uses the convention of
 representing empty cells as "." but you can use any character you want. You can
 even mix and match different characters.
 
+Gudoku will reject Sudokus containing collisions with an error message stating
+where the collsion occurred.
+
+    gudoku 11
+
+will result in
+
+    Error: Specified seed contains a collision at position 2.
+
 #### Examples
     gudoku ""
     gudoku .
