@@ -9,7 +9,7 @@ import groovy.transform.stc.SimpleType
  */
 @TypeChecked
 class Cell {
-    static final ALLOWED_VALUES = 1..9
+    static final IntRange ALLOWED_VALUES = 1..9
     static char empty = "."
 
     final Sudoku sudoku
