@@ -15,12 +15,16 @@ class Main {
             parser.usage()
             return
         }
-        Sudoku sudoku = new Sudoku(options.arguments().head())
-        if (options."pretty-print") {
-            sudoku.stringifier = new PrettyStringifier()
-            println "Read Sudoku:\n\n$sudoku\n\nSolving...\n\n"
+        try {
+            Sudoku sudoku = new Sudoku(options.arguments().head())
+            if (options."pretty-print") {
+                sudoku.stringifier = new PrettyStringifier()
+                println "Read Sudoku:\n\n$sudoku\n\nSolving...\n\n"
+            }
+            new SudokuSolver(sudoku: sudoku).solve()
+            print sudoku
+        } catch (IllegalArgumentException ex) {
+            println "Error: $ex.message"
         }
-        new SudokuSolver(sudoku: sudoku).solve()
-        print sudoku
     }
 }
