@@ -86,8 +86,8 @@ Notice:
 Print a help message explaining how to use Gudoku.
 
 #### -p, --pretty-print
-    gudoku -p ""
-    gudoku --pretty-print ""
+    gudoku -p .
+    gudoku --pretty-print .
 Print the output in a human readable form.
 
 ### File Expansion
