@@ -1,13 +1,13 @@
 package hendrikto.sudoku.model
 
-import groovy.transform.TypeChecked
+import groovy.transform.CompileStatic
 import groovy.transform.stc.ClosureParams
 import groovy.transform.stc.SimpleType
 
 /**
  * @author Hendrik Werner
  */
-@TypeChecked
+@CompileStatic
 class Cell {
     static final IntRange ALLOWED_VALUES = 1..9
     static char empty = "."

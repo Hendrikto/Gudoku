@@ -1,11 +1,11 @@
 package hendrikto.sudoku.model
 
-import groovy.transform.TypeChecked
+import groovy.transform.CompileStatic
 
 /**
  * @author Hendrik Werner
  */
-@TypeChecked
+@CompileStatic
 class Area {
     @Delegate Set<Integer> candidates = 1..9 as Set
 }

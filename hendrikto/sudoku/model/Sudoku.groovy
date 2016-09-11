@@ -1,11 +1,11 @@
 package hendrikto.sudoku.model
 
-import groovy.transform.TypeChecked
+import groovy.transform.CompileStatic
 
 /**
  * @author Hendrik Werner
  */
-@TypeChecked
+@CompileStatic
 class Sudoku {
     final Cell[] cells = new Cell[81]
     final List<Cell> empty = []
