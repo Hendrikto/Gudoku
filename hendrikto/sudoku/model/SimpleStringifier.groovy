@@ -6,9 +6,12 @@ import groovy.transform.CompileStatic
  * @author Hendrik Werner
  */
 @CompileStatic
-class SimpleStringifier implements SudokuStringifier {
+class SimpleStringifier extends SudokuStringifier {
     @Override
     String stringify(final Sudoku sudoku) {
-        sudoku.cells.join("")
+        Arrays.stream(sudoku.cells)
+                .map { it.value ?: empty }
+                .collect()
+                .join("")
     }
 }

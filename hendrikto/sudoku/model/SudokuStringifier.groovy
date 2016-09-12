@@ -6,6 +6,8 @@ import groovy.transform.CompileStatic
  * @author Hendrik Werner
  */
 @CompileStatic
-interface SudokuStringifier {
-    String stringify(Sudoku sudoku)
+abstract class SudokuStringifier {
+    char empty = "."
+
+    abstract String stringify(Sudoku sudoku)
 }

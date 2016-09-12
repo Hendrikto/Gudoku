@@ -10,7 +10,6 @@ import groovy.transform.stc.SimpleType
 @CompileStatic
 class Cell {
     static final IntRange ALLOWED_VALUES = 1..9
-    static char empty = "."
 
     final Sudoku sudoku
     final Area row
@@ -44,11 +43,6 @@ class Cell {
 
     Set<Integer> getCandidates() {
         row.intersect column intersect block
-    }
-
-    @Override
-    String toString() {
-        value ?: empty
     }
 
     private void forAllAreas(

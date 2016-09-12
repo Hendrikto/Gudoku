@@ -6,7 +6,7 @@ import groovy.transform.CompileStatic
  * @author Hendrik Werner
  */
 @CompileStatic
-class PrettyStringifier implements SudokuStringifier {
+class PrettyStringifier extends SudokuStringifier {
     @Override
     String stringify(final Sudoku sudoku) {
         StringBuilder sb = new StringBuilder()
@@ -15,7 +15,7 @@ class PrettyStringifier implements SudokuStringifier {
             if (cellID != 1 && cellID % 27 == 1) {
                 sb.append "------+-------+------\n"
             }
-            sb.append cell
+            sb.append cell.value ?: empty
             if (cellID % 9 == 0) {
                 sb.append "\n"
             } else if (cellID % 3 == 0) {
