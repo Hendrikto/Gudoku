@@ -1,11 +1,6 @@
 package hendrikto.sudoku.cli
 
-import hendrikto.sudoku.model.Cell
-import hendrikto.sudoku.model.PrettyStringifier
-import hendrikto.sudoku.model.SimpleStringifier
-import hendrikto.sudoku.model.Sudoku
-import hendrikto.sudoku.model.SudokuSolver
-import hendrikto.sudoku.model.SudokuStringifier
+import hendrikto.sudoku.model.*
 
 /**
  * @author Hendrik Werner
