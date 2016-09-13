@@ -15,7 +15,7 @@ class PrettyStringifier extends SudokuStringifier {
         StringBuilder sb = new StringBuilder()
         for (int i in 0..<81) {
             int cellID = i + 1
-            if (cellID != 1 && cellID % 27 == 1) {
+            if (i && i % 27 == 0) {
                 sb.append "------+-------+------\n"
             }
             sb.append sudoku.cells[i].value ?: empty
