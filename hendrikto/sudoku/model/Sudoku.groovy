@@ -1,6 +1,8 @@
 package hendrikto.sudoku.model
 
 import groovy.transform.CompileStatic
+import hendrikto.sudoku.model.stringifier.SimpleStringifier
+import hendrikto.sudoku.model.stringifier.SudokuStringifier
 
 /**
  * @author Hendrik Werner

@@ -1,6 +1,9 @@
-package hendrikto.sudoku.model
+package hendrikto.sudoku.model.stringifier
 
 import groovy.transform.CompileStatic
+import hendrikto.sudoku.model.Cell
+import hendrikto.sudoku.model.Sudoku
+import hendrikto.sudoku.model.stringifier.SudokuStringifier
 
 /**
  * @author Hendrik Werner
