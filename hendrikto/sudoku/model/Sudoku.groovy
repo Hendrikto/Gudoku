@@ -34,7 +34,7 @@ class Sudoku {
                         this,
                         rows[y],
                         columns[x],
-                        blocks[x.intdiv(3) as int][y.intdiv(3) as int]
+                        blocks[x.intdiv(3)][y.intdiv(3)]
                 )
             }
         }
