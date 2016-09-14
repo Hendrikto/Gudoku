@@ -21,11 +21,7 @@ class Sudoku {
         for (int i in 0..<9) {
             rows[i] = new Area()
             columns[i] = new Area()
-        }
-        for (int x in 0..<3) {
-            for (int y in 0..<3) {
-                blocks[x][y] = new Area()
-            }
+            blocks[i.intdiv(3)][i % 3] = new Area()
         }
         int i = 0;
         for (int x in 0..<9) {
